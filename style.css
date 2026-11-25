@@ -1,0 +1,323 @@
+:root {
+--bg: #f6edf2;
+--card: #fff9fc;
+--text: #2b1d26;
+--muted: #7a5c6e;
+--pink: #e04f8b;
+--pink-dark: #c43b74;
+--purple: #9b6bcc;
+--border: #f0d8e4;
+--soft-bg: #fff3f8;
+}
+
+* {
+box-sizing: border-box;
+font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+margin: 0;
+min-height: 100dvh;
+display: grid;
+place-items: center;
+background: radial-gradient(circle at top, #fde8f1, var(--bg));
+color: var(--text);
+padding: 20px;
+overflow-x: hidden;
+}
+
+.card {
+width: 100%;
+max-width: 440px;
+background: var(--card);
+border: 1px solid var(--border);
+border-radius: 24px;
+padding: 28px 24px;
+box-shadow: 0 18px 45px rgba(140, 60, 105, 0.12);
+text-align: center;
+position: relative;
+animation: fadeIn 0.25s ease;
+}
+
+@keyframes fadeIn {
+from {
+opacity: 0;
+transform: translateY(6px);
+}
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
+
+.hidden {
+display: none;
+}
+
+.avatar {
+width: 110px;
+height: 110px;
+object-fit: cover;
+border-radius: 18px;
+margin: 0 auto 16px;
+display: block;
+border: 2px solid var(--border);
+}
+
+.emoji-hero {
+font-size: 62px;
+line-height: 1.1;
+margin-bottom: 12px;
+}
+
+h1, h2 {
+margin: 0 0 10px;
+font-weight: 700;
+letter-spacing: -0.02em;
+}
+
+h1 {
+font-size: 1.65rem;
+}
+
+h2 {
+font-size: 1.35rem;
+}
+
+p {
+margin: 0 0 20px;
+color: var(--muted);
+line-height: 1.45;
+font-size: 1rem;
+}
+
+.btn-row {
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 14px;
+min-height: 54px;
+position: relative;
+}
+
+button {
+border: none;
+border-radius: 12px;
+padding: 12px 22px;
+font-size: 15px;
+font-weight: 600;
+cursor: pointer;
+touch-action: manipulation;
+transition: transform 0.15s ease, background 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+}
+
+button:active {
+transform: scale(0.97);
+}
+
+button:disabled {
+opacity: 0.7;
+cursor: not-allowed;
+}
+
+.btn-yes, .btn-primary {
+background: linear-gradient(135deg, var(--pink), var(--pink-dark));
+color: #fff;
+box-shadow: 0 8px 20px rgba(224, 79, 139, 0.28);
+}
+
+.btn-no {
+background: var(--purple);
+color: #fff;
+position: relative;
+z-index: 10;
+}
+
+.field {
+text-align: left;
+margin-bottom: 16px;
+}
+
+label {
+display: block;
+font-size: 13px;
+font-weight: 600;
+margin-bottom: 6px;
+color: var(--text);
+}
+
+input, select {
+width: 100%;
+padding: 11px 14px;
+border-radius: 12px;
+border: 1px solid #e4c6d5;
+background: #fff;
+color: var(--text);
+font-size: 16px;
+outline: none;
+transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+input:focus, select:focus {
+border-color: var(--pink);
+box-shadow: 0 0 0 3px rgba(224, 79, 139, 0.14);
+}
+
+/* Chill & vibes option cards */
+.food-grid {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 12px;
+margin-bottom: 8px;
+}
+
+.food-option {
+background: #fff;
+border: 1.5px solid var(--border);
+border-radius: 16px;
+padding: 16px 12px;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+gap: 8px;
+color: var(--text);
+line-height: 1.3;
+min-height: 92px;
+}
+
+.food-option span.icon {
+font-size: 28px;
+}
+
+.food-option:hover {
+background: var(--soft-bg);
+border-color: var(--pink);
+transform: translateY(-2px);
+}
+
+.letter-box {
+background: #fff;
+border: 1px dashed #e6b8cf;
+border-radius: 18px;
+padding: 20px 16px;
+margin-bottom: 18px;
+color: var(--text);
+}
+
+.letter-box p {
+margin-bottom: 0;
+}
+
+.w-full {
+width: 100%;
+}
+
+/* Mobile phones (up to 480px) */
+@media (max-width: 480px) {
+body {
+padding: 14px;
+}
+
+.card {
+border-radius: 20px;
+padding: 22px 18px;
+}
+
+.avatar {
+width: 92px;
+height: 92px;
+border-radius: 16px;
+}
+
+.emoji-hero {
+font-size: 52px;
+}
+
+h1 {
+font-size: 1.4rem;
+}
+
+h2 {
+font-size: 1.2rem;
+}
+
+p {
+font-size: 0.94rem;
+margin-bottom: 16px;
+}
+
+button {
+padding: 11px 18px;
+font-size: 14px;
+}
+
+.food-grid {
+gap: 10px;
+}
+
+.food-option {
+padding: 14px 10px;
+border-radius: 14px;
+min-height: 84px;
+font-size: 13.5px;
+}
+
+.food-option span.icon {
+font-size: 25px;
+}
+
+.letter-box {
+padding: 16px 14px;
+}
+}
+
+/* Very narrow mobile screens (up to 360px) */
+@media (max-width: 360px) {
+.card {
+padding: 18px 14px;
+}
+
+h1 {
+font-size: 1.25rem;
+}
+
+.btn-row {
+gap: 10px;
+}
+
+.food-grid {
+grid-template-columns: 1fr;
+}
+
+.food-option {
+min-height: auto;
+flex-direction: row;
+justify-content: flex-start;
+padding: 12px 14px;
+text-align: left;
+}
+}
+
+/* Short / landscape mobile screens */
+@media (max-height: 540px) and (orientation: landscape) {
+body {
+padding: 12px;
+place-items: start center;
+}
+
+.card {
+padding: 18px 20px;
+}
+
+.avatar {
+width: 72px;
+height: 72px;
+margin-bottom: 10px;
+}
+
+.emoji-hero {
+font-size: 42px;
+margin-bottom: 8px;
+}
+}
